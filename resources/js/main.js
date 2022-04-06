@@ -47,6 +47,7 @@ async function validatorinator (event) {
   await sleep(Math.floor(Math.random(6) * 5000));
 
   responseSection.innerHTML = response;
+  hiddenElements[2].style.display = 'block';
 }
 
 function sleep(ms) {
