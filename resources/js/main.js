@@ -10,8 +10,14 @@ const responses = [
   "Um, sorry, you missed my point. I appreciate your idea but also feel like you didn't listen to me.",
   "That seems sound. I don't have any more time or energy to talk about this right now.",
   "Appreciate that. I'm mostly venting, so I don't want to talk about this that deep.",
-  "Sure, that too. It's fine to have that view. I don't want to talk more right now because I feel like I'm being attacked."
+  "Sure, that too. It's fine to have that view. I don't want to talk more right now because I feel like I'm being attacked.",
+  "That sounds right. I'm busy with other things right now so can we talk about this later?",
+  "Thanks. I appreciate you sharing. However, I already know about this.",
+  "That sounds right and I appreciate your willingness to help. However, I feel like you're mansplaining because I'm already aware of most of what you're saying.",
 ];
+
+// TODO - add emojis and positive stuff
+// TODO - All good? button or system
 
 window.onload = function () {
   document.querySelector('textarea').value = '';
