@@ -7,11 +7,13 @@ const responses = [
   "You're right. That's also a way I could have looked at the situation.",
   'OK, thank you.', 'I like that idea. Thanks for sharing.', "I'm not a fan of that idea, but I appreciate you sharing.",
   "That's interesting! I hadn't thought of it that way.",
-  "Um, sorry, you missed my point. I appreciate your idea but also feel like you didn't listen to my point."
+  "Um, sorry, you missed my point. I appreciate your idea but also feel like you didn't listen to my point.",
+  "That seems sound. I don't have any more time or energy to talk about this right now."
 ];
 
 window.onload = function () {
-  document.querySelector('textarea').focus();
+  document.querySelector('textarea').value = '';
+  // document.querySelector('textarea').focus();
   const form = document.querySelector('form');
   const button = document.querySelector('button');
 
