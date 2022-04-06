@@ -9,6 +9,12 @@ section {
   padding: 20px;
 }
 
+textarea {
+  height: 200px;
+  white-space: pre-wrap;
+  width: 100%;
+}
+
 .hidden {
   display: none;
 }
