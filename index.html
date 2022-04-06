@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validatorinator</title>
+    <link rel="stylesheet" href="./resources/css/modern-normalize.css">
+    <link rel="stylesheet" href="./resources/css/style.css">
+  </head>
+
+  <body>
+    <header>
+      <h1>Validatorinator</h1>
+    </header>
+
+    <main>
+      <form>
+        <label for="idea">What is your idea or comment? Explain in as much detail as you like.
+          <p>
+            <textarea id="idea" name="idea" type="text"></textarea>
+          </p>
+        </label>
+        <input type="submit" value="Finished">
+      </form>
+
+      <h2 class="hidden">So, your idea is:</h2>
+      <p class="idea-text" id="idea-text"></p>
+
+      <h2 class="hidden">What I think:</h2>
+      <p id="response-text"></p>
+
+      <button class="hidden">Try Again?</button>
+    </main>
+    <script src="./resources/js/main.js"></script>
+  </body>
+</html>
