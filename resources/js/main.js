@@ -13,7 +13,7 @@ const responses = [
 
 window.onload = function () {
   document.querySelector('textarea').value = '';
-  // document.querySelector('textarea').focus();
+  document.querySelector('textarea').focus();
   const form = document.querySelector('form');
   const button = document.querySelector('button');
 
