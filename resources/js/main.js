@@ -24,11 +24,11 @@ window.onload = function () {
   document.querySelector('textarea').focus();
   const form = document.querySelector('form');
   const button = document.querySelector('#reset');
-  const themeButton = document.querySelector('#theme');
+  // const themeButton = document.querySelector('#theme');
 
   form.addEventListener('submit', validatorinator, false);
   button.addEventListener('click', refresh, false);
-  themeButton.addEventListener('click', toggleTheme, false);
+  // themeButton.addEventListener('click', toggleTheme, false);
 };
 
 async function validatorinator (event) {
@@ -67,15 +67,15 @@ function refresh () {
   location.reload();
 }
 
-function toggleTheme () {
-  const body = document.body;
-  const button = document.querySelector('#theme');
+// function toggleTheme () {
+//   const body = document.body;
+//   const button = document.querySelector('#theme');
 
-  if (body.hasAttribute('class', 'dark-mode')) {
-    body.removeAttribute('class', 'dark-mode');
-    button.textContent = '🏙️';
-  } else {
-    button.textContent = '🌃';
-    body.setAttribute('class', 'dark-mode');
-  }
-}
+//   if (body.hasAttribute('class', 'dark-mode')) {
+//     body.removeAttribute('class', 'dark-mode');
+//     button.textContent = '🏙️';
+//   } else {
+//     button.textContent = '🌃';
+//     body.setAttribute('class', 'dark-mode');
+//   }
+// }
