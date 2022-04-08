@@ -18,6 +18,7 @@ const responses = [
   "That sounds right. I'm busy with other things right now so can we talk about this later?",
   'Thanks. I appreciate you sharing. However, I already know about this.',
   "That sounds right and I appreciate your willingness to help. However, I feel like you're mansplaining because I'm already aware of most of what you're saying.",
+  'Thank you. I appreciate that. It really could be anything, so no worries.'
 ];
 
 // TODO - add emojis and positive stuff
