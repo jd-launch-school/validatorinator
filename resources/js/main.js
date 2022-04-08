@@ -23,19 +23,22 @@ window.onload = function () {
   document.querySelector('textarea').value = '';
   document.querySelector('textarea').focus();
   const form = document.querySelector('form');
-  const button = document.querySelector('button');
+  const button = document.querySelector('#reset');
+  const themeButton = document.querySelector('#theme');
 
   form.addEventListener('submit', validatorinator, false);
   button.addEventListener('click', refresh, false);
+  themeButton.addEventListener('click', toggleTheme, false);
 };
 
-async function validatorinator (event) {
+// async function validatorinator (event) {
+function validatorinator (event) {
   event.preventDefault();
 
   const form = document.querySelector('form');
   const idea = document.querySelector('#idea').value;
   const ideaText = document.querySelector('#idea-text');
-  const responseText = document.querySelector('#response-text');
+  // const responseText = document.querySelector('#response-text');
   const hiddenElements = document.querySelectorAll('.hidden');
   const responseSection = document.querySelector('#response-section');
 
@@ -50,16 +53,29 @@ async function validatorinator (event) {
   hiddenElements[1].style.display = 'block';
   responseSection.innerHTML = '<h2>Thinking ...</h2>';
 
-  await sleep(Math.floor(Math.random(6) * 5000));
+  // await sleep(Math.floor(Math.random(6) * 5000));
 
   responseSection.innerHTML = response;
   hiddenElements[2].style.display = 'block';
 }
 
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
+// function sleep(ms) {
+//   return new Promise(resolve => setTimeout(resolve, ms));
+// }
 
 function refresh () {
   location.reload();
+}
+
+function toggleTheme () {
+  const body = document.body;
+  const button = document.querySelector('#theme');
+
+  if (body.hasAttribute('class', 'dark-mode')) {
+    body.removeAttribute('class', 'dark-mode');
+    button.textContent = '🏙️';
+  } else {
+    button.textContent = '🌃';
+    body.setAttribute('class', 'dark-mode');
+  }
 }

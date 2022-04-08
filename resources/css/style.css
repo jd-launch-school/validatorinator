@@ -2,6 +2,21 @@ html {
   padding: 10px;
 }
 
+body {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  background-color: black;
+  color: white;
+}
+
+button {
+  background-color: #14171f;
+  border-color: rgba(0, 0, 0, 0.3);
+  color: whitesmoke;
+  font-size: 20px;
+}
+
 section {
   border-radius: 5px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
@@ -10,6 +25,9 @@ section {
 }
 
 textarea {
+  background-color: #14171f;
+  border: none;
+  color: whitesmoke;
   height: 200px;
   white-space: pre-wrap;
   width: 100%;
