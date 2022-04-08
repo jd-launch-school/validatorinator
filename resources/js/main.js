@@ -31,8 +31,8 @@ window.onload = function () {
   themeButton.addEventListener('click', toggleTheme, false);
 };
 
-// async function validatorinator (event) {
-function validatorinator (event) {
+async function validatorinator (event) {
+// function validatorinator (event) {
   event.preventDefault();
 
   const form = document.querySelector('form');
@@ -53,15 +53,15 @@ function validatorinator (event) {
   hiddenElements[1].style.display = 'block';
   responseSection.innerHTML = '<h2>Thinking ...</h2>';
 
-  // await sleep(Math.floor(Math.random(6) * 5000));
+  await sleep(Math.floor(Math.random(6) * 5000));
 
   responseSection.innerHTML = response;
   hiddenElements[2].style.display = 'block';
 }
 
-// function sleep(ms) {
-//   return new Promise(resolve => setTimeout(resolve, ms));
-// }
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 function refresh () {
   location.reload();
