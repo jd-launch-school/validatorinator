@@ -11,10 +11,11 @@ body {
 }
 
 button {
-  background-color: #14171f;
+  background-color: #1a1e29;
   border-color: rgba(0, 0, 0, 0.3);
   color: whitesmoke;
   font-size: 20px;
+  padding: 10px;
 }
 
 section {
