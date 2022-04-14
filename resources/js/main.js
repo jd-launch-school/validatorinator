@@ -1,4 +1,4 @@
-const idesResponses = [
+const ideaResponses = [
   'Great idea! Thank you for sharing.',
   "I don't agree, but I appreciate you sharing.",
   "Your ideas are valid, but I didn't ask for your ideas.",
