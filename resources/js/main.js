@@ -44,6 +44,8 @@ window.onload = function () {
   form.addEventListener('submit', validatorinator, false);
   button.addEventListener('click', refresh, false);
   // themeButton.addEventListener('click', toggleTheme, false);
+
+  copyright();
 };
 
 async function validatorinator (event) {
@@ -76,6 +78,13 @@ async function validatorinator (event) {
   responseSection.innerHTML = response;
   hiddenElements[2].style.display = 'block';
   hiddenElements[2].style.margin = 'auto';
+}
+
+function copyright () {
+  const copyrightElement = document.querySelector('.copyright');
+  const date = new Date();
+  const currentYear = date.getFullYear();
+  copyrightElement.innerHTML = `&copy;${currentYear} jd-launch-school`;
 }
 
 function sleep(ms) {
