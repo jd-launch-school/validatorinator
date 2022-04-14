@@ -84,7 +84,7 @@ function copyright () {
   const copyrightElement = document.querySelector('.copyright');
   const date = new Date();
   const currentYear = date.getFullYear();
-  copyrightElement.innerHTML = `&copy;${currentYear} jd-launch-school`;
+  copyrightElement.innerHTML = `&copy;${currentYear} @jd-launch-school`;
 }
 
 function sleep(ms) {

@@ -19,7 +19,7 @@ header {
   align-items: center;
   display: flex;
   justify-content: space-between;
-  margin: 30px 15px;
+  margin: 30px;
 }
 
 header a {
