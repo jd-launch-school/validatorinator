@@ -3,15 +3,16 @@ html {
 }
 
 body {
-  width: 100%;
-  max-width: 800px;
-  margin: auto;
   background-color: black;
   color: white;
+  margin: auto;
+  max-width: 800px;
+  text-align: center;
+  width: 100%;
 }
 
 button {
-  background-color: #1a1e29;
+  background-color: #282f41;
   border-color: rgba(0, 0, 0, 0.3);
   color: whitesmoke;
   font-size: 20px;
@@ -19,7 +20,7 @@ button {
 }
 
 section {
-  background-color: #14171f;
+  background-color: #282f41;
   border-radius: 5px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   margin: 20px;
@@ -27,7 +28,7 @@ section {
 }
 
 textarea {
-  background-color: #14171f;
+  background-color: #282f41;
   border: none;
   color: whitesmoke;
   height: 200px;
