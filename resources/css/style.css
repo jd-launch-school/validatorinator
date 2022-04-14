@@ -11,6 +11,13 @@ body {
   width: 100%;
 }
 
+footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  text-align: right;
+}
+
 button {
   background-color: #282f41;
   border-color: rgba(0, 0, 0, 0.3);
@@ -42,4 +49,10 @@ textarea {
 
 .show {
   display: block;
+}
+
+.pulsate-css {
+  animation: pulsate 1s ease-out;
+  animation-iteration-count: infinite; 
+  opacity: 0.0;
 }

@@ -22,7 +22,7 @@ const ideaResponses = [
   'Thank you. I appreciate that. It really could be anything, so no worries.'
 ];
 
-feelingResponses = [
+const feelingResponses = [
   "I'm sorry you feel that way. That's not my intention.",
   "Thank you for sharing. I'm not doing this intentionally. I also feel that way about you.",
   'Your feelings are valid and important. I think you may be misunderstanding the situation. Can I help get us on the same page?',
@@ -52,20 +52,16 @@ async function validatorinator (event) {
   const form = document.querySelector('form');
   const idea = document.querySelector('#idea').value;
   const ideaText = document.querySelector('#idea-text');
-  // const responseText = document.querySelector('#response-text');
+
   const hiddenElements = document.querySelectorAll('.hidden');
   const responseSection = document.querySelector('#response-section');
-  
+
   const feelingWords = ['I feel', "I'm feeling", 'makes me feel'];
-  const feelingInIdeaText = feelingWords.some(word => ideaText.includes(word));
-  
-  if (feelingInIdeaText) {
-    randomNum = Math.floor(Math.random() * (feelingResponses.length));
-    response = feelingResponses[randomNum];
-  } else {
-    const randomNum = Math.floor(Math.random() * (ideaResponses.length));
-    response = ideaResponses[randomNum];
-  }
+  const feelingInIdeaText = feelingWords.some(word => ideaText.innerHTML.includes(word));
+  const responses = feelingInIdeaText ? feelingResponses : ideaResponses;
+
+  const randomNum = Math.floor(Math.random() * (responses.length));
+  const response = responses[randomNum];
 
   form.style.display = 'none';
 
@@ -73,12 +69,13 @@ async function validatorinator (event) {
   hiddenElements[0].style.display = 'block';
 
   hiddenElements[1].style.display = 'block';
-  responseSection.innerHTML = '<h2>Thinking ...</h2>';
+  responseSection.innerHTML = '<h2>Thinking <span class="pulsate-css">...</span></h2>';
 
   await sleep(Math.floor(Math.random(6) * 5000));
 
   responseSection.innerHTML = response;
   hiddenElements[2].style.display = 'block';
+  hiddenElements[2].style.margin = 'auto';
 }
 
 function sleep(ms) {
