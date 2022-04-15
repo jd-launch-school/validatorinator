@@ -28,7 +28,16 @@ const feelingResponses = [
   'Your feelings are valid and important. I think you may be misunderstanding the situation. Can I help get us on the same page?',
   'Thanks for sharing. I love you and I will do what I can to help.',
   "I understand that you feel this way. I believe you. However, it feels like you're attacking me so I need to take a break to think about this.",
-];
+  "OK, that makes sense. I'm sorry if I caused that feeling for you.",
+  'I feel that way too. Sharing this with me is helpful. Thank you.',
+  "When I feel that way, I don't have anyone to talk to. Maybe we can talk to one another about this feeling?",
+  "I'm sorry. I didn't mean to cause that feeling.",
+  "I'm glad you're sharing your feelings with me. I don't understand the feeling in this context, but I'm still supportive of you feeling that way.",
+  "Feeling this way is not fun. I'm sorry you have to go through this. Is there anything I can do?",
+  "Thank you for sharing.",
+  "Aww. I'm sorry you feel that. What can I do to help?",
+  "I hear how you feel. I believe you. However, it feels to me like you're trying to change the subject and make yourself the victim here.",
+  "Your feelings are valid. I appreciate you for sharing them. I'd like to focus on my feelings first since your actions were questionable or strange."
 
 // TODO - add emojis and positive stuff
 // TODO - All good? button or system
@@ -59,7 +68,7 @@ async function validatorinator (event) {
   const responseSection = document.querySelector('#response-section');
 
   const feelingWords = ['I feel', "I'm feeling", 'makes me feel'];
-  const feelingInIdeaText = feelingWords.some(word => ideaText.innerHTML.includes(word));
+  const feelingInIdeaText = feelingWords.some(word => idea.match(word));
   const responses = feelingInIdeaText ? feelingResponses : ideaResponses;
 
   const randomNum = Math.floor(Math.random() * (responses.length));
@@ -67,7 +76,7 @@ async function validatorinator (event) {
 
   form.style.display = 'none';
 
-  ideaText.innerHTML = idea.split('\n').join('<br>');
+  ideaText.innerText = idea;
   hiddenElements[0].style.display = 'block';
 
   hiddenElements[1].style.display = 'block';
