@@ -38,6 +38,7 @@ const feelingResponses = [
   "Aww. I'm sorry you feel that. What can I do to help?",
   "I hear how you feel. I believe you. However, it feels to me like you're trying to change the subject and make yourself the victim here.",
   "Your feelings are valid. I appreciate you for sharing them. I'd like to focus on my feelings first since your actions were questionable or strange."
+];
 
 // TODO - add emojis and positive stuff
 // TODO - All good? button or system
