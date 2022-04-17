@@ -88,10 +88,9 @@ async function validatorinator (event) {
   await sleep(Math.floor(Math.random(6) * 5000));
 
   responseSection.innerHTML = response;
-  
+
   for (let index = 2; index < hiddenElements.length; index += 1) {
     hiddenElements[index].style.display = 'block';
-    hiddenElements[index].style.margin = 'auto';
   }
 }
 
@@ -110,17 +109,25 @@ function refresh () {
   location.reload();
 }
 
-function anotherResponse () {
+function anotherResponse (state = false) {
   const responseSection = document.querySelector('#response-section');
+  const idea = document.querySelector('#idea').value;
   const hiddenElements = document.querySelectorAll('.hidden');
-  
+
   const feelingWords = ['I feel', "I'm feeling", 'makes me feel'];
   const feelingInIdeaText = feelingWords.some(word => idea.match(word));
   const responses = feelingInIdeaText ? feelingResponses : ideaResponses;
 
   const randomNum = Math.floor(Math.random() * (responses.length));
   const response = responses[randomNum];
-  
+
+  // for (let index = 2; index < hiddenElements.length; index += 1) {
+  //   hiddenElements[index].style.display = 'none';
+  // }
+
+  hiddenElements[1].style.display = 'block';
+  responseSection.innerHTML = '<h2>Thinking <span class="pulsate-css">...</span></h2>';
+
   responseSection.innerHTML = response;
 }
 
