@@ -48,12 +48,14 @@ window.onload = function () {
   document.querySelector('textarea').value = '';
   document.querySelector('textarea').focus();
   const form = document.querySelector('form');
-  const button = document.querySelector('#reset');
+  const resetButton = document.querySelector('#reset');
+  const anotherResponseButton = document.querySelector('#another-response');
   // const themeButton = document.querySelector('#theme');
 
   form.addEventListener('submit', validatorinator, false);
-  button.addEventListener('click', refresh, false);
+  resetButton.addEventListener('click', refresh, false);
   // themeButton.addEventListener('click', toggleTheme, false);
+  anotherResponseButton.addEventListener('click', anotherResponse, false);
 
   copyright();
 };
@@ -86,8 +88,14 @@ async function validatorinator (event) {
   await sleep(Math.floor(Math.random(6) * 5000));
 
   responseSection.innerHTML = response;
-  hiddenElements[2].style.display = 'block';
-  hiddenElements[2].style.margin = 'auto';
+  
+  for (let index = 2; index < hiddenElements.length; index += 1) {
+    hiddenElements[index].style.display = 'block';
+    hiddenElements[index].style.margin = 'auto';
+  }
+  
+  // hiddenElements[3].style.display = 'block';
+  // hiddenElements[3].style.margin = 'auto';
 }
 
 function copyright () {
