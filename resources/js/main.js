@@ -121,7 +121,7 @@ function anotherResponse () {
   const randomNum = Math.floor(Math.random() * (responses.length));
   const response = responses[randomNum];
   
-  responseSection.innerHTML = resposnse;
+  responseSection.innerHTML = response;
 }
 
 // function toggleTheme () {
