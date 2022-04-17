@@ -93,9 +93,6 @@ async function validatorinator (event) {
     hiddenElements[index].style.display = 'block';
     hiddenElements[index].style.margin = 'auto';
   }
-  
-  // hiddenElements[3].style.display = 'block';
-  // hiddenElements[3].style.margin = 'auto';
 }
 
 function copyright () {
@@ -111,6 +108,20 @@ function sleep(ms) {
 
 function refresh () {
   location.reload();
+}
+
+function anotherResponse () {
+  const responseSection = document.querySelector('#response-section');
+  const hiddenElements = document.querySelectorAll('.hidden');
+  
+  const feelingWords = ['I feel', "I'm feeling", 'makes me feel'];
+  const feelingInIdeaText = feelingWords.some(word => idea.match(word));
+  const responses = feelingInIdeaText ? feelingResponses : ideaResponses;
+
+  const randomNum = Math.floor(Math.random() * (responses.length));
+  const response = responses[randomNum];
+  
+  responseSection.innerHTML(resposnse);
 }
 
 // function toggleTheme () {
