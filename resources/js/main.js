@@ -1,4 +1,4 @@
-const ideaResponses = [
+const IDEA_RESPONSES = [
   'Great idea! Thank you for sharing.',
   "I don't agree, but I appreciate you sharing.",
   "Your ideas are valid, but I didn't ask for your ideas.",
@@ -22,7 +22,7 @@ const ideaResponses = [
   'Thank you. I appreciate that. It really could be anything, so no worries.'
 ];
 
-const feelingResponses = [
+const FEELING_RESPONSES = [
   "I'm sorry you feel that way. That's not my intention.",
   "Thank you for sharing. I'm not doing this intentionally. I also feel that way about you.",
   'Your feelings are valid and important. I think you may be misunderstanding the situation. Can I help get us on the same page?',
@@ -52,7 +52,6 @@ window.onload = function () {
   resetButton.addEventListener('click', refresh, false);
   // themeButton.addEventListener('click', toggleTheme, false);
   anotherResponseButton.addEventListener('click', validatorinator, false);
-  // anotherResponseButton.addEventListener('click', anotherResponse, false);
 
   copyright();
 };
@@ -65,7 +64,6 @@ async function validatorinator (event) {
   const ideaText = document.querySelector('#idea-text');
   const hiddenElements = document.querySelectorAll('.hidden');
   const responseSection = document.querySelector('#response-section');
-
   const response = getResponse(idea);
 
   form.style.display = 'none';
@@ -74,7 +72,7 @@ async function validatorinator (event) {
   hiddenElements[0].style.display = 'block';
 
   hiddenElements[1].style.display = 'block';
-  responseSection.innerHTML = '<h2>Thinking <span class="pulsate-css">...</span></h2>';
+  responseSection.innerHTML = '<h2>I\'m thinking <span class="pulsate-css">...</span></h2>';
 
   await sleep(Math.floor(Math.random(6) * 5000));
 
@@ -98,28 +96,6 @@ function sleep(ms) {
 
 function refresh () {
   location.reload();
-}
-
-function anotherResponse (state = false) {
-  const responseSection = document.querySelector('#response-section');
-  const idea = document.querySelector('#idea').value;
-  const hiddenElements = document.querySelectorAll('.hidden');
-
-  const feelingWords = ['I feel', "I'm feeling", 'makes me feel'];
-  const feelingInIdeaText = feelingWords.some(word => idea.match(word));
-  const responses = feelingInIdeaText ? feelingResponses : ideaResponses;
-
-  const randomNum = Math.floor(Math.random() * (responses.length));
-  const response = responses[randomNum];
-
-  // for (let index = 2; index < hiddenElements.length; index += 1) {
-  //   hiddenElements[index].style.display = 'none';
-  // }
-
-  hiddenElements[1].style.display = 'block';
-  responseSection.innerHTML = '<h2>Thinking <span class="pulsate-css">...</span></h2>';
-
-  responseSection.innerHTML = response;
 }
 
 function getResponse (idea) {
