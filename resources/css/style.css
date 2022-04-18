@@ -45,6 +45,7 @@ button {
 .buttons {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 section {
