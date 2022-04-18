@@ -1,4 +1,5 @@
 // TODO: Reset w/out reload
+// TODO: Add shortcut icons
 // TODO: Add Val wording
 // TODO: Move responses to YAML
 // TODO: Add light theme
@@ -48,6 +49,8 @@ const FEELING_RESPONSES = [
 ];
 
 window.onload = function () {
+  copyright();
+  
   document.querySelector('textarea').value = '';
   document.querySelector('textarea').focus();
   const form = document.querySelector('form');
@@ -59,8 +62,6 @@ window.onload = function () {
   resetButton.addEventListener('click', refresh, false);
   // themeButton.addEventListener('click', toggleTheme, false);
   anotherResponseButton.addEventListener('click', validatorinator, false);
-
-  copyright();
 };
 
 async function validatorinator (event) {
