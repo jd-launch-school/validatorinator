@@ -101,7 +101,7 @@ function refresh () {
 function getResponse (idea) {
   const feelingWords = ['I feel', "I'm feeling", 'makes me feel', 'I felt'];
   const feelingInIdea = feelingWords.some(word => idea.match(word));
-  const responses = feelingInIdea ? feelingResponses : ideaResponses;
+  const responses = feelingInIdea ? FEELING_RESPONSES : IDEA_RESPONSES;
 
   const randomNum = Math.floor(Math.random() * (responses.length));
   return responses[randomNum];
