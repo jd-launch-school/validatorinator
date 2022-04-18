@@ -40,10 +40,6 @@ const feelingResponses = [
   "Your feelings are valid. I appreciate you for sharing them. I'd like to focus on my feelings first since your actions were questionable or strange."
 ];
 
-// TODO - add emojis and positive stuff
-// TODO - All good? button or system
-// TODO - Pick a different response?
-
 window.onload = function () {
   document.querySelector('textarea').value = '';
   document.querySelector('textarea').focus();
@@ -55,7 +51,8 @@ window.onload = function () {
   form.addEventListener('submit', validatorinator, false);
   resetButton.addEventListener('click', refresh, false);
   // themeButton.addEventListener('click', toggleTheme, false);
-  anotherResponseButton.addEventListener('click', anotherResponse, false);
+  anotherResponseButton.addEventListener('click', validatorinator, false);
+  // anotherResponseButton.addEventListener('click', anotherResponse, false);
 
   copyright();
 };
@@ -66,16 +63,10 @@ async function validatorinator (event) {
   const form = document.querySelector('form');
   const idea = document.querySelector('#idea').value;
   const ideaText = document.querySelector('#idea-text');
-
   const hiddenElements = document.querySelectorAll('.hidden');
   const responseSection = document.querySelector('#response-section');
 
-  const feelingWords = ['I feel', "I'm feeling", 'makes me feel'];
-  const feelingInIdeaText = feelingWords.some(word => idea.match(word));
-  const responses = feelingInIdeaText ? feelingResponses : ideaResponses;
-
-  const randomNum = Math.floor(Math.random() * (responses.length));
-  const response = responses[randomNum];
+  const response = getResponse(idea);
 
   form.style.display = 'none';
 
@@ -129,6 +120,15 @@ function anotherResponse (state = false) {
   responseSection.innerHTML = '<h2>Thinking <span class="pulsate-css">...</span></h2>';
 
   responseSection.innerHTML = response;
+}
+
+function getResponse (idea) {
+  const feelingWords = ['I feel', "I'm feeling", 'makes me feel', 'I felt'];
+  const feelingInIdea = feelingWords.some(word => idea.match(word));
+  const responses = feelingInIdea ? feelingResponses : ideaResponses;
+
+  const randomNum = Math.floor(Math.random() * (responses.length));
+  return responses[randomNum];
 }
 
 // function toggleTheme () {
