@@ -1,3 +1,10 @@
+// TODO: Reset w/out reload
+// TODO: Add Val wording
+// TODO: Move responses to YAML
+// TODO: Add light theme
+// TODO: Add About overlay
+// TODO: Add Spanish, Mandarin, others
+
 const IDEA_RESPONSES = [
   'Great idea! Thank you for sharing.',
   "I don't agree, but I appreciate you sharing.",
