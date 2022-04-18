@@ -1,3 +1,4 @@
+// TODO: Don't allow empty idea input
 // TODO: Reset w/out reload
 // TODO: Add shortcut icons
 // TODO: Add Val wording
