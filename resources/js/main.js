@@ -89,8 +89,6 @@ async function validatorinator (event) {
 }
 
 function toggleHidden (hiddenElements) {
-  hiddenElements[0].style.display = 'none';
-  hiddenElements[1].style.display = 'none';
   for (let index = 2; index < hiddenElements.length; index += 1) {
     if (hiddenElements[index].style.display === 'block') {
       hiddenElements[index].style.display = 'none';
@@ -114,8 +112,11 @@ function sleep(ms) {
 function refresh () {
   const hiddenElements = document.querySelectorAll('.hidden');
   const form = document.querySelector('form');
+  hiddenElements[0].style.display = 'none';
+  hiddenElements[1].style.display = 'none';
   toggleHidden(hiddenElements);
   form.style.display = 'block';
+  document.querySelector('#idea').value = '';
   // location.reload();
 }
 
