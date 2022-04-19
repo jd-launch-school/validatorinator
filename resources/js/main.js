@@ -1,4 +1,3 @@
-// TODO: Reset w/out reload
 // TODO: Add shortcut icons
 // TODO: Add Val wording
 // TODO: Move responses to YAML
@@ -118,13 +117,12 @@ function sleep(ms) {
 
 function refresh () {
   const hiddenElements = document.querySelectorAll('.hidden');
-  const form = document.querySelector('form');
+  
   hiddenElements[0].style.display = 'none';
   hiddenElements[1].style.display = 'none';
   toggleHidden(hiddenElements);
-  form.style.display = 'block';
+  document.querySelector('form').style.display = 'block';
   document.querySelector('#idea').value = '';
-  // location.reload();
 }
 
 function getResponse (idea) {
