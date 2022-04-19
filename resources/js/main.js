@@ -82,7 +82,7 @@ async function validatorinator (event) {
   hiddenElements[1].style.display = 'block';
   responseSection.innerHTML = '<h2>I\'m thinking <span class="pulsate-css">...</span></h2>';
 
-  if (hiddenElements[3].style.display !== 'block') {
+  if (hiddenElements[3].style.display === 'block') {
     toggleHidden(hiddenElements);
   }
 
