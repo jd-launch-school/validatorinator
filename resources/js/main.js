@@ -85,7 +85,10 @@ async function validatorinator (event) {
   await sleep(Math.floor(Math.random(6) * 5000));
 
   responseSection.innerHTML = response;
-  toggleHidden(hiddenElements);
+  
+  if (hiddenElements[3].style.display !== 'block') {
+    toggleHidden(hiddenElements);
+  }
 }
 
 function toggleHidden (hiddenElements) {
