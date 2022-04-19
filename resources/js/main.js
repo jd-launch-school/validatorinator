@@ -1,4 +1,3 @@
-// TODO: Don't allow empty idea input
 // TODO: Reset w/out reload
 // TODO: Add shortcut icons
 // TODO: Add Val wording
@@ -86,9 +85,16 @@ async function validatorinator (event) {
   await sleep(Math.floor(Math.random(6) * 5000));
 
   responseSection.innerHTML = response;
+  toggleHidden(hiddenElements);
+}
 
+function toggleHidden (hiddenElements) {
   for (let index = 2; index < hiddenElements.length; index += 1) {
-    hiddenElements[index].style.display = 'block';
+    if (hiddenElements[index].style.display === 'block') {
+      hiddenElements[index].style.display = 'none';
+    } else {
+      hiddenElements[index].style.display = 'block';
+    }
   }
 }
 
@@ -104,7 +110,11 @@ function sleep(ms) {
 }
 
 function refresh () {
-  location.reload();
+  const hiddenElements = document.querySelectorAll('.hidden');
+  const form = document.querySelector('form');
+  toggleHidden(hiddenElements);
+  form.style.display = 'block';
+  // location.reload();
 }
 
 function getResponse (idea) {
