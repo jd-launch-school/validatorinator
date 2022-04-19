@@ -89,6 +89,8 @@ async function validatorinator (event) {
 }
 
 function toggleHidden (hiddenElements) {
+  hiddenElements[0].style.display = 'none';
+  hiddenElements[1].style.display = 'none';
   for (let index = 2; index < hiddenElements.length; index += 1) {
     if (hiddenElements[index].style.display === 'block') {
       hiddenElements[index].style.display = 'none';
