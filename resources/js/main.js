@@ -1,5 +1,3 @@
-// TODO: Add shortcut icons
-// TODO: Add Val wording
 // TODO: Move responses to YAML
 // TODO: Add light theme
 // TODO: Add About overlay
@@ -41,7 +39,7 @@ const FEELING_RESPONSES = [
   "I'm sorry. I didn't mean to cause that feeling.",
   "I'm glad you're sharing your feelings with me. I don't understand the feeling in this context, but I'm still supportive of you feeling that way.",
   "Feeling this way is not fun. I'm sorry you have to go through this. Is there anything I can do?",
-  "Thank you for sharing.",
+  'Thank you for sharing.',
   "Aww. I'm sorry you feel that. What can I do to help?",
   "I hear how you feel. I believe you. However, it feels to me like you're trying to change the subject and make yourself the victim here.",
   "Your feelings are valid. I appreciate you for sharing them. I'd like to focus on my feelings first since your actions were questionable or strange."
@@ -49,18 +47,20 @@ const FEELING_RESPONSES = [
 
 window.onload = function () {
   copyright();
-  
+
   document.querySelector('textarea').value = '';
   document.querySelector('textarea').focus();
   const form = document.querySelector('form');
   const resetButton = document.querySelector('#reset');
   const anotherResponseButton = document.querySelector('#another-response');
-  // const themeButton = document.querySelector('#theme');
+  const closeIntroButton = document.querySelector('#get-started');
+  const h1 = document.querySelector('h1');
 
   form.addEventListener('submit', validatorinator, false);
   resetButton.addEventListener('click', refresh, false);
-  // themeButton.addEventListener('click', toggleTheme, false);
   anotherResponseButton.addEventListener('click', validatorinator, false);
+  closeIntroButton.addEventListener('click', toggleIntro, false);
+  h1.addEventListener('click', toggleIntro, false);
 };
 
 async function validatorinator (event) {
@@ -88,7 +88,7 @@ async function validatorinator (event) {
   await sleep(Math.floor(Math.random(6) * 5000));
 
   responseSection.innerHTML = response;
-  
+
   if (hiddenElements[3].style.display !== 'block') {
     toggleHidden(hiddenElements);
   }
@@ -117,7 +117,7 @@ function sleep(ms) {
 
 function refresh () {
   const hiddenElements = document.querySelectorAll('.hidden');
-  
+
   hiddenElements[0].style.display = 'none';
   hiddenElements[1].style.display = 'none';
   toggleHidden(hiddenElements);
@@ -133,6 +133,19 @@ function getResponse (idea) {
   const randomNum = Math.floor(Math.random() * (responses.length));
   return responses[randomNum];
 }
+
+function toggleIntro () {
+  const intro = document.querySelector('#intro');
+  if (intro.style.display === 'block') {
+    intro.style.display = 'none';
+    document.querySelector('#idea').focus();
+  } else {
+    intro.style.display = 'block';
+  }
+}
+
+// const themeButton = document.querySelector('#theme');
+// themeButton.addEventListener('click', toggleTheme, false);
 
 // function toggleTheme () {
 //   const body = document.body;
