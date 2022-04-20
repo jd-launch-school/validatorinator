@@ -136,7 +136,9 @@ function getResponse (idea) {
 
 function toggleIntro () {
   const intro = document.querySelector('#intro');
-  if (intro.style.display === 'block') {
+  const display = intro.style.display;
+
+  if (display === 'block' || display === '') {
     intro.style.display = 'none';
     document.querySelector('#idea').focus();
   } else {
